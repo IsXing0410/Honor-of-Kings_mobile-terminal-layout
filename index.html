@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英雄联盟手游官网</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <!-- <link rel="stylesheet" href="./css/pop.css"> -->
+</head>
+<body>
+    <div class="menu_containner">
+        <div class="menu_title">
+            <a href="" class="menu_logo">
+                <img src="./assets/logo.png" alt="">
+            </a>
+            <div class="menu_switch "></div>
+            <div class="menu_attend">敬请关注</div>
+            
+        </div>
+        <ul class="menu_nav">
+            <li>敬请关注</li>
+            <li>新闻资讯</li>
+            <li>游戏特色</li>
+            <li><a href="">问题反馈</a></li>
+            <li>FAQ</li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        // rem布局
+        (function () {
+          function setFont() {
+            var psdWidth = 750;
+            document.documentElement.style.fontSize =
+              (document.documentElement.clientWidth / psdWidth) * 100 + "px";
+          }
+          setFont();
+          window.addEventListener("resize", setFont);
+        })();
+    </script>
+     <!-- 通用API -->
+     <script src="./js/common.js"></script>
+     <!-- 菜单 -->
+     <script src="./js/menu.js"></script>
+     <!-- <script src="./js/page.js?v=0.3"></script> -->
+</body>
+</html>
