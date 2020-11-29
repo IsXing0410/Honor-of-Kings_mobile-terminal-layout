@@ -8,6 +8,7 @@
   width: 100%;
   background-color: #202629;
   height: 0.98rem;
+  z-index: 20;
 }
 .menu_containner .menu_title .menu_logo {
   float: left;
@@ -67,6 +68,7 @@
   background: #BC3129;
 }
 .menu_containner .menu_nav {
+  z-index: 20;
   position: fixed;
   top: 0.98rem;
   right: 0;

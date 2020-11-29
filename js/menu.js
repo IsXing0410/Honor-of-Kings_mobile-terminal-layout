@@ -8,6 +8,10 @@
     divSwitch.classList.toggle("menu_switch_expand");
     ulNav.classList.toggle("menu_nav_visible");
     }
+    
     divSwitch.onclick = toggleNav;
 
+    ulNav.addEventListener("click",function(){
+        toggleNav();
+    })
 })();
