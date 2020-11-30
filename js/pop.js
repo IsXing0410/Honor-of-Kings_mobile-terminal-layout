@@ -2,7 +2,12 @@ var showPop = (function(){
     var menuAttend = $(".menu_attend");
 
     function showPop(id){
-        $("#" + id).style.display = "";
+        var container = $("#" + id);
+        container.style.display = "";
+        if (id === "popVideo") {
+            var vdo = container.querySelector("video");
+            vdo.play();
+        }
         
     }
 

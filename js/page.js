@@ -68,19 +68,27 @@ var showPage = (function () {
     var pageContainer = $(".page_container");
     pageContainer.ontouchstart = function (e) {
         var y = e.touches[0].clientY;
-        //手指按下，监听移动
-        pageContainer.ontouchmove = function (e) {
+        function handler(e) {
             var dis = e.touches[0].clientY - y;
             if (Math.abs(dis) < 20) {
-                // 防止误触
-                dis = 0;
+              // 防止误触
+              dis = 0; // 相当于手指没动
             }
             moving(dis);
-        }
+            // 阻止事件的默认行为
+            if (e.cancelable) {
+              // 如果事件可以取消
+              e.preventDefault(); // 取消事件 - 阻止默认行为
+            }
+          } 
+        //手指按下，监听移动
+        pageContainer.addEventListener("touchmove",handler,{
+            passive:false
+        }) ; 
 
         pageContainer.ontouchend = function () {
             finishMove();
-            pageContainer.ontouchmove = null;
+            pageContainer.removeEventListener("touchmove", handler);
         }
     }
 

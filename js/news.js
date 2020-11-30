@@ -22,4 +22,31 @@
             },
           ];  
           createCarousel("newsCarousel",carouselDatas);
+
+    // 新闻数据
+    // 从腾讯的服务器获取新闻数据，然后循环生成新闻列表li
+    ajax('https://apps.game.qq.com/cmc/cross?serviceId=166&source=web_pc&filter=channel&chanid=4897&typeids=1&limit=4&start=0&sortby=sIdxTime')
+        .then(resp=>{
+            console.log(resp); // 服务器的响应结果
+            var ul = $(".news_list"),
+                html = ""; //拼接字符串
+            // 拿到数据后运行的函数
+            for(var i = 0; i < resp.data.items.length; i++){
+              var news = resp.data.items[i];
+              var type = news.sTagInfo.split(",")[0].split("|")[1];
+              html += `
+              <li>
+                <span style="display: block;">${type}</span>
+                </div>
+                <p>${news.sIdxTime}</p>
+                <a href="https://lolm.qq.com/m/news_detail.html?docid=${news.iDocID}">
+                ${news.sTitle}
+                </a>
+              </li>
+              `
+              
+            }
+            ul.innerHTML = html;
+
+        })
 })();

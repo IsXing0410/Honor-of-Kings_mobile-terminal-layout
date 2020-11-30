@@ -73,7 +73,7 @@ function createCarousel(carouselId, datas) {
       indHtml += "<li></li>"
 
     }
-    carouselList.style.width = `${datas.length} * 100%`
+    carouselList.style.width = `${datas.length}00%`;
     carouselList.innerHTML = listHtml;
     indicator.innerHTML = indHtml;
   }
@@ -225,3 +225,19 @@ function createCarousel(carouselId, datas) {
   };
 }
 
+
+// 代理请求
+async function ajax(url) {
+  var reg = /http[s]?:\/\/[^/]+/;
+  var matches = url.match(reg);
+  if (matches.length === 0) {
+    throw new Error("invalid url");
+  }
+  var target = matches[0];
+  var path = url.replace(reg, "");
+  return await fetch(`https://proxy.yuanjin.tech${path}`, {
+    headers: {
+      target,
+    },
+  }).then((r) => r.json());
+}

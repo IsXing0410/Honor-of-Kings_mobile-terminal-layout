@@ -31,6 +31,11 @@
   background: url(../assets/b_pop_bg.png) left bottom no-repeat;
   background-size: 6.53rem 5.41rem;
 }
+.pop_container .pop_inner .pop_mid .pop_content img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
 .pop_container .pop_inner .pop_bottom {
   background: url(../assets/pop_bot.png) no-repeat;
   background-size: 6.53rem 1.13rem;
@@ -125,4 +130,26 @@
   margin: 0.5rem auto 0;
   background: url(../assets/pop_btn_spr.png) no-repeat;
   background-size: 3.81rem 9.65rem;
+}
+#popVideo .pop_inner {
+  width: 7rem;
+  height: 5.4rem;
+  border: 1px solid #7d623e;
+}
+#popVideo .pop_inner video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+#popVideo .pop_inner .pop_close {
+  top: -0.4rem;
+}
+#popDetail p {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 0.24rem;
+  line-height: 0.4rem;
+  padding-bottom: 0.6rem;
 }
