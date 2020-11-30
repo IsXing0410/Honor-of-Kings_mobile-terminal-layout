@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/pop.css">
     <link rel="stylesheet" href="./css/page.css">
+    <link rel="stylesheet" href="./css/attend.css">
 </head>
 <body>
     <!-- 菜单 -->
@@ -22,19 +23,46 @@
             
         </div>
         <ul class="menu_nav">
-            <li>敬请关注</li>
-            <li>新闻资讯</li>
-            <li>游戏特色</li>
-            <li><a href="">问题反馈</a></li>
+            <li onclick="showPage(0)">敬请关注</li>
+            <li onclick="showPage(1)">新闻资讯</li>
+            <li onclick="showPage(2)">游戏特色</li>
+            <li onclick="showPage(3)"><a href="">问题反馈</a></li>
             <li onclick="showPop('popFAQ')">FAQ</li>
         </ul>
     </div>
 
     <!-- 页面 -->
     <div class="page_container">
-      <div class="page" style="background: #f40;">0</div>
-      <div class="page" style="background: #f3b03d;">1</div>
-      <div class="page" style="background: rgb(77, 197, 245);">2</div>
+      <div class="page" >
+        <!-- 第一页 -->
+        <div class="attend_container">
+          <div class="attend_slogon">
+            <span class="attend_play"></span>
+          </div>
+          <div class="attend_button" onclick="showPop('popAttend')"></div>
+          <div class="g_arrow"></div>
+        </div>
+      </div>
+      <div class="page" >
+        <!-- 第二页 -->
+        <div class="news_container">
+          <div class="g_carousel_container" id="newsCarousel">
+            <ul class="g_carousel_list" style="width: 300%;">
+            </ul>
+            <ul class="g_carousel_indicator">
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <div class="g_carousel_prev"></div>
+            <div class="g_carousel_next"></div>
+          </div>
+        </div>
+      </div>
+      <div class="page">
+        <!-- 第三页 -->
+        <div class="game_container"></div>
+      </div>
     </div>
     <!-- 弹窗-敬请关注 -->
     <div class="pop_container" id="popAttend" style="display: none;">
@@ -132,5 +160,7 @@
      <script src="./js/menu.js"></script>
      <script src="./js/pop.js"></script>
      <script src="./js/page.js"></script>
+     <script src="./js/news.js"></script>
+
 </body>
 </html>
